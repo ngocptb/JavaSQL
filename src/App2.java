@@ -1,4 +1,6 @@
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 import tutorial.blog.dao.BlogMemoryDao;
 import tutorial.blog.service.BlogService;
@@ -23,7 +25,16 @@ public class App2 {
 		do {
 			System.out.println("cmd >");
 			cmd = sc.nextLine();
-		}while( !"exist".equals(cmd));
+			Map<String, String> map= service.process(cmd);
+			
+			Set<String> keys = map.keySet();
+			// enhanced for
+			for(String key: keys) {
+				System.out.println(key +":" + map.get(key));
+			}
+			
+			
+			}while( !"exist".equals(cmd));
 		System.out.println("Terminated !");
 		sc.close();
 	}
