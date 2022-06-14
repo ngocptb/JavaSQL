@@ -4,7 +4,7 @@ import tutorial.blog.dao.BlogMemoryDao;
 import tutorial.blog.service.BlogService;
 
 /**
- * @suthor Jadepham
+ * @author Jade
  */
 import tutorial.blog.service.BlogService;
 
