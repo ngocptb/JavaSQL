@@ -2,155 +2,164 @@ package tutorial.blog.entity;
 
 import java.sql.Timestamp;
 
-//게시글 
+//ê²Œì‹œê¸€ 
 public class BlogPost {
 
- // 게시글 아이디 
- private Integer id;
+	// ê²Œì‹œê¸€ ì•„ì�´ë””
+	private Integer id;
 
- // 게시글 제목 
- private String title;
+	// ê²Œì‹œê¸€ ì œëª©
+	private String title;
 
- // 게시글 내용 
- private String article;
+	// ê²Œì‹œê¸€ ë‚´ìš©
+	private String article;
 
- // 수정된 게시글 제목 
- private String titleClean;
+	// ìˆ˜ì •ë�œ ê²Œì‹œê¸€ ì œëª©
+	private String titleClean;
 
- // 첨부 파일 
- private String file;
+	// ì²¨ë¶€ íŒŒì�¼
+	private String file;
 
- // 저자 아이디 저자 미상 포스트 가능
- private Integer authorId;
+	// ì €ìž� ì•„ì�´ë”” ì €ìž� ë¯¸ìƒ� í�¬ìŠ¤íŠ¸ ê°€ëŠ¥
+	private Integer authorId;
 
- // 공개 일자 
- private Timestamp datePublished;
+	// ê³µê°œ ì�¼ìž�
+	private Timestamp datePublished;
 
- // 광고 이미지 
- private String bannerImage;
+	// ê´‘ê³  ì�´ë¯¸ì§€
+	private String bannerImage;
 
- // 특징 
- private Boolean featured;
+	// íŠ¹ì§•
+	private Boolean featured;
 
- // 활성화 여부 
- private Boolean enabled;
+	// í™œì„±í™” ì—¬ë¶€
+	private Boolean enabled;
 
- // 댓글 가능 여부 
- private Boolean commentsEnabled;
+	// ëŒ“ê¸€ ê°€ëŠ¥ ì—¬ë¶€
+	private Boolean commentsEnabled;
 
- // 읽은 횟수 
- private Integer views;
+	// ì�½ì�€ íšŸìˆ˜
+	private Integer views;
 
- public Integer getId() {
-     return id;
- }
+	public Integer getId() {
+		return id;
+	}
 
- public void setId(Integer id) {
-     this.id = id;
- }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
- public String getTitle() {
-     return title;
- }
+	public String getTitle() {
+	
+			return title;
+		
+	}
 
- public void setTitle(String title) {
-     this.title = title;
- }
+	public void setTitle(String title) {
+		if (title == null) {
+			this.title = "";
+		} else {
+			this.title = title;
+		}
+	}
 
- public String getArticle() {
-     return article;
- }
+	public String getArticle() {
+		return article;
+	}
 
- public void setArticle(String article) {
-     this.article = article;
- }
+	public void setArticle(String article) {
+		this.article = article;
+	}
 
- public String getTitleClean() {
-     return titleClean;
- }
+	public String getTitleClean() {
+		return titleClean;
+	}
 
- public void setTitleClean(String titleClean) {
-     this.titleClean = titleClean;
- }
+	public void setTitleClean(String titleClean) {
+		this.titleClean = titleClean;
+	}
 
- public String getFile() {
-     return file;
- }
+	public String getFile() {
+		return file;
+	}
 
- public void setFile(String file) {
-     this.file = file;
- }
+	public void setFile(String file) {
+		this.file = file;
+	}
 
- public Integer getAuthorId() {
-     return authorId;
- }
+	public Integer getAuthorId() {
+		return authorId;
+	}
 
- public void setAuthorId(Integer authorId) {
-     this.authorId = authorId;
- }
+	public void setAuthorId(Integer authorId) {
+		this.authorId = authorId;
+	}
 
- public Timestamp getDatePublished() {
-     return datePublished;
- }
+	public Timestamp getDatePublished() {
+		return datePublished;
+	}
 
- public void setDatePublished(Timestamp datePublished) {
-     this.datePublished = datePublished;
- }
+	public void setDatePublished(Timestamp datePublished) {
+		this.datePublished = datePublished;
+	}
 
- public String getBannerImage() {
-     return bannerImage;
- }
+	public String getBannerImage() {
+		return bannerImage;
+	}
 
- public void setBannerImage(String bannerImage) {
-     this.bannerImage = bannerImage;
- }
+	public void setBannerImage(String bannerImage) {
+		this.bannerImage = bannerImage;
+	}
 
- public Boolean getFeatured() {
-     return featured;
- }
+	public Boolean getFeatured() {
+		return featured;
+	}
 
- public void setFeatured(Boolean featured) {
-     this.featured = featured;
- }
+	public void setFeatured(Boolean featured) {
+		this.featured = featured;
+	}
 
- public Boolean getEnabled() {
-     return enabled;
- }
+	public Boolean getEnabled() {
+		return enabled;
+	}
 
- public void setEnabled(Boolean enabled) {
-     this.enabled = enabled;
- }
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
 
- public Boolean getCommentsEnabled() {
-     return commentsEnabled;
- }
+	public Boolean getCommentsEnabled() {
+		return commentsEnabled;
+	}
 
- public void setCommentsEnabled(Boolean commentsEnabled) {
-     this.commentsEnabled = commentsEnabled;
- }
+	public void setCommentsEnabled(Boolean commentsEnabled) {
+		this.commentsEnabled = commentsEnabled;
+	}
 
- public Integer getViews() {
-     return views;
- }
+	public Integer getViews() {
+		return views;
+	}
 
- public void setViews(Integer views) {
-     this.views = views;
- }
+	public void setViews(Integer views) {
+		this.views = views;
+	}
+	public void CopyData(BlogPost param) {
+		this.id = param.getId();
+		this.title = param.getTitle();
+		this.article = param.getArticle();
+		this.titleClean = param.getTitleClean();
+		this.file = param.getFile();
+		this.authorId = param.getAuthorId();
+		this.datePublished = param.getDatePublished();
+		this.bannerImage = param.getBannerImage();
+		this.featured = param.getFeatured();
+		this.enabled = param.getEnabled();
+		this.commentsEnabled = param.getCommentsEnabled();
+		this.views = param.getViews();
+	}
 
- // BlogPost Copy model
- public void CopyData(BlogPost param)
- {
-     this.id = param.getId();
-     this.title = param.getTitle();
-     this.article = param.getArticle();
-     this.titleClean = param.getTitleClean();
-     this.file = param.getFile();
-     this.authorId = param.getAuthorId();
-     this.datePublished = param.getDatePublished();
-     this.bannerImage = param.getBannerImage();
-     this.featured = param.getFeatured();
-     this.enabled = param.getEnabled();
-     this.commentsEnabled = param.getCommentsEnabled();
-     this.views = param.getViews();
- }
+	// BlogPost Copy model
+	@Override
+	public String toString() {
+		return "BlogPost {id:" + id + ", title=" + title + ", article=" + article + "}";
+	}
 }

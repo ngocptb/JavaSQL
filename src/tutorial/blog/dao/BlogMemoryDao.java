@@ -25,5 +25,15 @@ public class BlogMemoryDao {
 		postRepo = new ArrayList<BlogPost>();
 		cateRepo = new ArrayList<BlogCategory>();
 	}
+	public void save(BlogPost post) {
+		// auto-increment: id have to be unique
+		post.setId(postRepo.size() + 1);
+		postRepo.add(post);
+	}
+	public BlogPost findLastPost() {
+		// TODO 1 List can have same data, 2. need to override equal
+		
+		return postRepo.get(postRepo.size()-1);
+	}
  
 }
